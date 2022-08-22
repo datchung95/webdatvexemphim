@@ -1,0 +1,47 @@
+.trapezoid {
+    border-bottom: 50px solid rgb(209 213 219);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 80%;
+    filter: drop-shadow(0px 50px 50px #000000);
+    -webkit-filter: drop-shadow(0px 50px 50px #000000);
+    -moz-filter: drop-shadow(0px 50px 50px #000000);
+}
+
+.chiTietGhe {
+    margin: 10px 10px 10px 0!important;
+}
+
+.ghe {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px;
+    background-color: rgb(123, 122, 122);
+    color: white;
+}
+
+.gheDaDat {
+    background-color: rgb(232, 76, 76)!important;
+    cursor: no-drop;
+}
+
+.gheDangDat {
+    background-color: rgb(18, 176, 18)!important;
+}
+
+.gheVip {
+    background-color: orange;
+}
+
+.gheUserDat {
+    background-color: white!important;
+    border: 1px solid rgb(232, 76, 76);
+    color: darkolivegreen;
+}
+
+.gheKhachDat {
+    background-color: rgb(242, 25, 191)!important;
+    cursor: no-drop;
+}

@@ -1,0 +1,12 @@
+.slick-prev::before, .slick-next::before {
+    color: gray!important;
+    font-size: 3rem!important;
+}
+
+.width-items {
+    width: 100%!important;
+}
+
+.activeClassListFilm {
+    @apply bg-gray-800 text-gray-100
+}
