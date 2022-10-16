@@ -98,7 +98,7 @@ export default function AdminTemplate(props) {
             <Fragment>
                 <Layout>
                     <Sider
-                        breakpoint="lg"
+                        breakpoint="xl"
                         collapsedWidth="0"
                     >
                         <div>

@@ -39,7 +39,87 @@ const settings = {
     slidesPerRow: 1,
     variableWidth: true,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+        {
+            breakpoint: 1350,
+            settings: {
+                className: "center variable-width",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "50px",
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                className: "center variable-width",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "100px",
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 900,
+            settings: {
+                className: "center variable-width",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "20px",
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                className: "center variable-width",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "150px",
+                slidesToShow: 1,
+                nextArrow: false,
+                prevArrow: false,
+            }
+        },
+        {
+            breakpoint: 735,
+            settings: {
+                className: "center variable-width",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "80px",
+                slidesToShow: 1,
+                nextArrow: false,
+                prevArrow: false,
+            }
+        },
+        {
+            breakpoint: 560,
+            settings: {
+                className: "center variable-width",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "20px",
+                slidesToShow: 1,
+                nextArrow: false,
+                prevArrow: false,
+            }
+        },
+        {
+            breakpoint: 400,
+            settings: {
+                className: "center variable-width",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "0.5px",
+                slidesToShow: 1,
+                nextArrow: false,
+                prevArrow: false,
+            }
+        },
+    ]
 };
 
 export default function MultipleRowSlick(props) {
@@ -47,7 +127,7 @@ export default function MultipleRowSlick(props) {
     const { arrMovie } = props;
 
     const dispatch = useDispatch();
-    const { dangChieu, sapChieu } = useSelector(state => state.QuanLyPhimReducers); 
+    const { dangChieu, sapChieu } = useSelector(state => state.QuanLyPhimReducers);
 
     const activeDangChieu = dangChieu === true ? "activeClassListFilm" : "";
     const activeSapChieu = sapChieu === true ? "activeClassListFilm" : "";

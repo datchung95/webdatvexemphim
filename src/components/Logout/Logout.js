@@ -40,14 +40,14 @@ export default function Logout(props) {
 
     return (
         <div className="flex items-center">
-            <div className="flex items-center cursor-pointer" onClick={() => (history.push("/trangcanhan"))}>
-                <div className="w-12 h-12 flex justify-center items-center rounded-full bg-orange-300">{userLogin.taiKhoan.substr(0, 1)}</div>
-                <span className={`ml-2 ${classTextLogout}`}>Chào</span>
-                <span className={`ml-2 ${classTextLogout}`}>{userLogin.hoTen}</span>
-            </div>
-            <Dropdown overlay={menu} trigger={['click']}>
+            <Dropdown overlay={menu} trigger={['hover']}>
                 <a onClick={(e) => e.preventDefault()}>
                     <Space>
+                        <div className="flex items-center cursor-pointer" onClick={() => (history.push("/trangcanhan"))}>
+                            <div className={`w-12 h-12 flex justify-center items-center rounded-full bg-orange-300 ${classTextLogout}`}>{userLogin.taiKhoan?.substr(0, 1)}</div>
+                            <span className={`ml-2 ${classTextLogout}`}>Chào</span>
+                            <span className={`ml-2 ${classTextLogout}`}>{userLogin.hoTen}</span>
+                        </div>
                         <div className={`ml-2 ${classTextLogout}`}><DownOutlined /></div>
                     </Space>
                 </a>

@@ -17,7 +17,7 @@ export default function TrailerPopup(props) {
                         <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                             <div className="sm:flex justify-center sm:items-start">
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                    <iframe width="530" height="315" src="https://www.youtube.com/embed/RlOB3UALvrQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                                    <iframe style={{ width: "100%", height: "250px" }} src="https://www.youtube.com/embed/RlOB3UALvrQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                                 </div>
                             </div>
                         </div>

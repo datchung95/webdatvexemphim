@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Contact() {
     return (
-        <div className="p-32 min-h-screen">
+        <div className="pt-32 container min-h-screen">
             <h3>Xin vui lòng liên hệ chúng tôi</h3>
             <p>Địa chỉ: 1360 Huỳnh Tấn Phát, Phú Mỹ, Quận 7, Thành phố Hồ Chí Minh, Việt Nam</p>
             <p>Số điện thoại: 000000000</p>

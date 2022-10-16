@@ -7,7 +7,7 @@ const { TabPane } = Tabs;
 
 export default function HomeMenu(props) {
 
-    const tabPosition = "left"
+    const tabPosition = "top"
 
     const { heThongRapChieu } = props;
 
@@ -31,10 +31,10 @@ export default function HomeMenu(props) {
                                         <img src={phim.hinhAnh} alt={phim.maPhim} style={{ width: "100px", height: "150px" }} onError={(e) => { e.target.onError = null; e.target.src = "https://picsum.photos/100/150" }} />
                                         <div className="ml-3">
                                             <p className="font-bold">{phim.tenPhim}</p>
-                                            <div className="grid grid-cols-8 gap-3">
-                                                {phim.lstLichChieuTheoPhim?.slice(0, 12).map((lich, index) => {
+                                            <div className="grid lg:grid-cols-8 sm:grid-cols-8 xs:grid-cols-3 w-max gap-3">
+                                                {phim.lstLichChieuTheoPhim?.slice(0, 8).map((lich, index) => {
                                                     return <NavLink key={index} to={`/datve/${lich.maLichChieu}`} className="border p-1 bg-orange-400 text-white">
-                                                        {moment(lich.ngayChieuGioChieu).format("hh:mm A")}
+                                                        {moment(lich.ngayChieuGioChieu).format("HH:mm")}
                                                     </NavLink>
                                                 })}
                                             </div>
@@ -52,7 +52,7 @@ export default function HomeMenu(props) {
 
     return (
         <div className="container">
-            <Tabs tabPosition={tabPosition}>
+            <Tabs tabPosition="top">
                 {renderTabRapPhim()}
             </Tabs>
         </div>

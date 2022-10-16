@@ -13,6 +13,15 @@
     margin: 10px 10px 10px 0!important;
 }
 
+.gheMenu {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px;
+    background-color: rgb(123, 122, 122);
+    color: white;
+}
+
 .ghe {
     width: 35px;
     height: 35px;
@@ -44,4 +53,37 @@
 .gheKhachDat {
     background-color: rgb(242, 25, 191)!important;
     cursor: no-drop;
+}
+
+@media screen and (max-width: 1024px) {
+    .ghe {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .ghe {
+        width: 30px;
+        height: 30px;
+        margin: 7px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ghe {
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .ghe {
+        width: 15px;
+        height: 15px;
+        margin: 1px;
+        color: transparent;
+    }
 }

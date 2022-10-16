@@ -4,4 +4,4 @@ export const TOKEN = "accessToken";
 
 export const USER_LOGIN_LOCAL = "USER_LOGIN_LOCAL";
 
-export const GROUPDSPHIM = "GP03"
+export const GROUPDSPHIM = "GP01"

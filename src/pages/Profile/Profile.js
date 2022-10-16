@@ -80,7 +80,7 @@ export default function Profile() {
                     <div className="col-span-1">
                         <img src={item.hinhAnh} alt={item.tenPhim} />
                     </div>
-                    <div className="col-span-5">
+                    <div className="col-span-5 text-left">
                         <div key={index}>
                             <p className="mb-2">{item.danhSachGhe[0].tenHeThongRap}</p>
                         </div>
@@ -97,14 +97,14 @@ export default function Profile() {
     }
 
     return (
-        <section className="text-gray-600 body-font p-10">
-            <div className="container px-5 py-24 mx-auto flex flex-col">
+        <section className="text-gray-600 body-font py-10">
+            <div className="container py-24 mx-auto flex flex-col">
                 <div className="lg:w-4/6 mx-auto">
                     <div className="rounded-lg h-64 overflow-hidden">
                         <img alt="content" className="object-cover object-center h-full w-full" src={`https://picsum.photos/${window.innerWidth}/${window.innerHeight}`} />
                     </div>
                     <div className="flex flex-col sm:flex-row mt-10">
-                        <div className="sm:w-1/3 text-center sm:px-8 sm:py-8 bg-gradient-to-r from-sky-600 to-sky-300">
+                        <div className="sm:w-1/3 text-center xs:py-3 sm:px-8 sm:py-8 bg-gradient-to-r from-sky-600 to-sky-300">
                             <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400 text-5xl">
                                 {thongTinNguoiDung.taiKhoan.slice(0, 1)}
                             </div>
@@ -128,27 +128,27 @@ export default function Profile() {
                                     </div>
                                 </TabPane>
                                 <TabPane tab="Chỉnh sửa thông tin" key="2">
-                                    <h3 className="text-4xl">Chỉnh sửa thông tin cá nhân</h3>
+                                    <h3 className="xs:text-xl sm:text-4xl">Chỉnh sửa thông tin cá nhân</h3>
                                     <hr className="mb-5" />
                                     <form onSubmit={formik.handleSubmit}>
-                                        <div className="grid grid-cols-2 gap-5">
-                                            <div className="mb-3">
+                                        <div className="grid xs:grid-cols-1 xs:gap-0 sm:grid-cols-2 sm:gap-5 mb-3">
+                                            <div className="xs:text-center sm:text-left xs:mb-3 sm:mb-0">
                                                 <p className="mb-1 font-semibold text-lg">Họ tên</p>
                                                 <Input placeholder="Nhập họ tên của bạn" type="text" name="hoTen" onChange={formik.handleChange} value={formik.values.hoTen} />
                                                 {formik.touched.hoTen && <p className="text-red-500">{formik.errors.hoTen}</p>}
                                             </div>
-                                            <div className="text-left">
+                                            <div className="text-left xs:text-center sm:text-left">
                                                 <p className="mb-1 font-semibold text-lg">Tài khoản</p>
                                                 <Input disabled={true} type="text" value={formik.values.taiKhoan} />
                                             </div>
                                         </div>
-                                        <div className="grid grid-cols-2 gap-5">
-                                            <div className="text-left mb-3">
+                                        <div className="grid xs:grid-cols-1 xs:gap-0 sm:grid-cols-2 sm:gap-5 mb-3">
+                                            <div className="xs:text-center sm:text-left xs:mb-3 sm:mb-0">
                                                 <p className="mb-1 font-semibold text-lg">Số điện thoại</p>
                                                 <Input placeholder="Nhập số điện thoại của bạn" type="number" name="soDt" onChange={formik.handleChange} value={formik.values.soDt} />
                                                 {formik.touched.soDt && <p className="text-red-500">{formik.errors.soDt}</p>}
                                             </div>
-                                            <div className="text-left">
+                                            <div className="xs:text-center sm:text-left">
                                                 <p className="mb-1 font-semibold text-lg">Mật khẩu</p>
                                                 <Input placeholder="Nhập mật khẩu của bạn" type="text" name="matKhau" onChange={formik.handleChange} value={formik.values.matKhau} />
                                                 {formik.touched.matKhau && <p className="text-red-500">{formik.errors.matKhau}</p>}

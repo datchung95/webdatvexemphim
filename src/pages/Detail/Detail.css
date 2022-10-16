@@ -37,3 +37,9 @@
     left: 0;
     transition: all 0.5s;
 }
+
+@media screen and (max-width: 576px) {
+    .detail__tab .ant-tabs-tabpane {
+        padding-left: 0!important;
+    }
+}

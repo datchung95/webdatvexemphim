@@ -34,7 +34,7 @@ export default function Register() {
 
     return (
         <div className="lg:w-full h-full xl:max-w-screen-sm">
-            <div className="mt-10 px-12 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
+            <div className="mt-10 xs:px-5 sm:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
                 <h2 className="text-center text-4xl text-white font-display font-semibold lg:text-left xl:text-5xl
               xl:text-bold">Đăng ký</h2>
                 <div className="mt-12 mb-5">

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.container {
+  min-width: 100%!important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

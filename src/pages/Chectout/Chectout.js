@@ -102,7 +102,7 @@ function Chectout(props) {
     return (
         <div className="min-h-screen">
             <div className="grid grid-cols-12 mt-7">
-                <div className="col-span-9">
+                <div className="lg:col-span-9 xs:col-span-12">
                     <div className="flex flex-col items-center">
                         <div className="bg-black" style={{ width: "80%", height: "15px" }}></div>
                         <div className="trapezoid text-black text-center text-lg">Màn hình</div>
@@ -111,13 +111,13 @@ function Chectout(props) {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-3 flex flex-col justify-between mr-5">
+                <div className="lg:col-span-3 xs:col-span-12 flex flex-col justify-between mr-5 lg:mt-0 xs:mt-5">
                     <div>
                         <h3 className="text-center text-2xl text-green-400">{renderTongTien()} đ</h3>
                         <hr />
-                        <h3 className="text-xl">{thongTinPhim.tenPhim}</h3>
-                        <p><span className="font-bold">Địa điểm: </span>{thongTinPhim.diaChi} - {thongTinPhim.tenRap}</p>
-                        <p><span className="font-bold">Ngày chiếu: </span>{thongTinPhim.ngayChieu} - {thongTinPhim.gioChieu}</p>
+                        <h3 className="text-xl lg:text-left xs:text-center">{thongTinPhim.tenPhim}</h3>
+                        <p><span className="font-bold lg:text-left xs:text-center">Địa điểm: </span>{thongTinPhim.diaChi} - {thongTinPhim.tenRap}</p>
+                        <p><span className="font-bold lg:text-left xs:text-center">Ngày chiếu: </span>{thongTinPhim.ngayChieu} - {thongTinPhim.gioChieu}</p>
                         <hr />
                         <div className="grid grid-cols-8 my-3">
                             <div className="col-span-6">
@@ -143,27 +143,27 @@ function Chectout(props) {
                         <hr />
                         <div>
                             <div className="flex items-center">
-                                <p className="ghe chiTietGhe"></p>
+                                <p className="gheMenu chiTietGhe"></p>
                                 <p>Ghế chưa đặt</p>
                             </div>
                             <div className="flex items-center">
-                                <p className="ghe gheVip chiTietGhe"></p>
+                                <p className="gheMenu gheVip chiTietGhe"></p>
                                 <p>Ghế vip chưa đặt</p>
                             </div>
                             <div className="flex items-center">
-                                <p className="ghe gheDangDat chiTietGhe"></p>
+                                <p className="gheMenu gheDangDat chiTietGhe"></p>
                                 <p>Ghế đang đặt</p>
                             </div>
                             <div className="flex items-center">
-                                <p className="ghe gheDaDat chiTietGhe"></p>
+                                <p className="gheMenu gheDaDat chiTietGhe"></p>
                                 <p>Ghế đã đươc đặt</p>
                             </div>
                             <div className="flex items-center">
-                                <p className="ghe gheUserDat chiTietGhe"></p>
+                                <p className="gheMenu gheUserDat chiTietGhe"></p>
                                 <p>Ghế bạn đã đặt</p>
                             </div>
                             <div className="flex items-center">
-                                <p className="ghe gheKhachDat chiTietGhe"></p>
+                                <p className="gheMenu gheKhachDat chiTietGhe"></p>
                                 <p>Ghế khách đang đặt</p>
                             </div>
                         </div>

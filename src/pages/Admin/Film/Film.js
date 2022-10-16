@@ -29,7 +29,7 @@ export default function Film(props) {
         }, 500)
     }
 
-    const debounceSearch = useCallback(_.debounce(() => {dispatch(getDanhSachPhim(keyword))}, 1000), [keyword]);
+    const debounceSearch = useCallback(_.debounce(() => { dispatch(getDanhSachPhim(keyword)) }, 1000), [keyword]);
 
     const handleChangeSearch = (e) => {
         let value = e.target.value
@@ -119,7 +119,10 @@ export default function Film(props) {
                 onSearch={onSearch}
                 onChange={handleChangeSearch}
             />
-            <Table rowKey="maPhim" columns={columns} dataSource={arrMovieDefault} />
+            <Table scroll={{
+                x: 900,
+                y: 500,
+            }} rowKey="maPhim" columns={columns} dataSource={arrMovieDefault} />
         </div>
     )
 }

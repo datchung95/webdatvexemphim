@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { UserAddOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Input, Popconfirm, Table } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { layDanhSachNguoiDungAction, xoaNguoiDungAction } from '../../../redux/actions/QuanLyNguoiDungActions';
@@ -38,7 +38,7 @@ export default function Users() {
             title: 'STT',
             render: (text, record, index) => {
                 return <p>{(page - 1) * 10 + index + 1}</p>
-            }
+            },
         },
         {
             title: 'Tài khoản',
@@ -84,7 +84,7 @@ export default function Users() {
                         <button className="p-3 bg-transparent text-red-500 rounded-lg text-xl"><DeleteOutlined /></button>
                     </Popconfirm>
                 </div>
-            }
+            },
         },
     ];
 
@@ -118,7 +118,10 @@ export default function Users() {
                 />
             </div>
             <div className="mt-5">
-                <Table columns={columns} dataSource={dsNguoiDung} rowKey="taiKhoan" pagination={{
+                <Table scroll={{
+                    x: 900,
+                    y: 500,
+                }} columns={columns} dataSource={dsNguoiDung} rowKey="taiKhoan" pagination={{
                     onChange(current) {
                         setPage(current);
                     }
