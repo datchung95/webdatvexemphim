@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import openNotificationWithIcon from '../../Notification/Notification'
 import history from '../../util/libs/history'
 import { GROUPDSPHIM, USER_LOGIN_LOCAL } from '../../util/setting/config'
-import { Tabs, Input, Pagination } from 'antd';
+import { Tabs, Input, Pagination, Select } from 'antd';
 import { useDispatch, useSelector } from 'react-redux'
-import { capNhatThongTinNguoiDungProfileAction, layThongTinNguoiDungAction } from '../../redux/actions/QuanLyNguoiDungActions';
+import { capNhatThongTinNguoiDungProfileAction, layDanhSachLoaiNguoiDungAction, layThongTinNguoiDungAction } from '../../redux/actions/QuanLyNguoiDungActions';
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import moment from 'moment';
@@ -15,7 +15,7 @@ const pageSize = 3;
 
 export default function Profile() {
 
-    const { thongTinNguoiDung } = useSelector(state => state.QuanLyNguoiDungReducers);
+    const { thongTinNguoiDung, dsLoaiNguoiDung } = useSelector(state => state.QuanLyNguoiDungReducers);
 
     const dispatch = useDispatch();
 
@@ -35,6 +35,7 @@ export default function Profile() {
 
     useEffect(() => {
         dispatch(layThongTinNguoiDungAction())
+        dispatch(layDanhSachLoaiNguoiDungAction())
     }, [])
 
     const formik = useFormik({
@@ -45,11 +46,12 @@ export default function Profile() {
             email: thongTinNguoiDung.email,
             soDt: thongTinNguoiDung.soDT,
             maNhom: GROUPDSPHIM,
-            maLoaiNguoiDung: "",
-            hoTen: thongTinNguoiDung.hoTen
+            loaiNguoiDung: thongTinNguoiDung.loaiNguoiDung,
+            hoTen: thongTinNguoiDung.hoTen,
+            maLoaiNguoiDung: ""
         },
         onSubmit: (values) => {
-            if (thongTinNguoiDung.loaiNguoiDung === "Quản trị") {
+            if (values.loaiNguoiDung === "Quản trị") {
                 values.maLoaiNguoiDung = "QuanTri";
             } else {
                 values.maLoaiNguoiDung = "KhachHang";
@@ -71,6 +73,12 @@ export default function Profile() {
             minIndex: (page - 1) * pageSize,
             maxIndex: page * pageSize
         })
+    }
+
+    const handleChangeSelect = (name) => {
+        return (value) => {
+            formik.setFieldValue(name, value)
+        }
     }
 
     const renderLichSuDatVe = () => {
@@ -154,11 +162,17 @@ export default function Profile() {
                                                 {formik.touched.matKhau && <p className="text-red-500">{formik.errors.matKhau}</p>}
                                             </div>
                                         </div>
-                                        <div className="mb-5">
+                                        <div className="mb-5 grid xs:grid-cols-1 xs:gap-0 sm:grid-cols-2 sm:gap-5">
                                             <div>
                                                 <p className="mb-1 font-semibold text-lg">Email</p>
                                                 <Input placeholder="Nhập email của bạn" type="email" name="email" onChange={formik.handleChange} value={formik.values.email} />
                                                 {formik.touched.email && <p className="text-red-500">{formik.errors.email}</p>}
+                                            </div>
+                                            <div>
+                                                <p className="mb-1 font-semibold text-lg">Loại người dùng</p>
+                                                <Select defaultValue={formik.values.loaiNguoiDung} onChange={handleChangeSelect("loaiNguoiDung")} options={dsLoaiNguoiDung.map((item, index) => {
+                                                    return {value: item.tenLoai, label: item.tenLoai}
+                                                })} className='w-full' />
                                             </div>
                                         </div>
                                         <div className="text-center">

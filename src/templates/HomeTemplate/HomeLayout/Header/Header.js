@@ -33,7 +33,6 @@ export default function Header() {
             setClassTextLogout("text-white")
         }
     }, [resizeClassText])
-    console.log(classTextLogout)
 
     useEffect(() => {
         if(resizeClassText) {
@@ -42,7 +41,6 @@ export default function Header() {
             setDisplayBlock("")
         }
     }, [resizeClassText])
-    console.log(displayBlock)
 
     const renderUser = () => {
         if (localStorage.getItem(USER_LOGIN_LOCAL)) {
@@ -50,7 +48,7 @@ export default function Header() {
                 <Logout classTextLogout={classTextLogout} />
             </Fragment>
         } else {
-            return <Fragment>
+            return <div>
                 <NavLink to="/dangnhap" className={`self-center px-4 py-3 ${classTextLogout} ${displayBlock}`} onClick={() => {
                     dispatch(displayLoaidng);
                     setTimeout(() => {
@@ -63,7 +61,7 @@ export default function Header() {
                         dispatch(hiddenLoading);
                     }, 500)
                 }}>{t("signup")}</NavLink>
-            </Fragment>
+            </div>
         }
     }
 

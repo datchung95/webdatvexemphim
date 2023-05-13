@@ -79,6 +79,8 @@ export const capNhatThongTinNguoiDungProfileAction = (userUpdate) => {
                 dispatch(hiddenLoading);
             }, 500)
             openNotificationWithIcon("success", "Cập nhật thành công");
+            localStorage.clear();
+            window.location.reload()
         } catch (err) {
             setTimeout(() => {
                 dispatch(hiddenLoading);
